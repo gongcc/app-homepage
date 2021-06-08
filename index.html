@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>紫云首页</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://oss.11ziyun.com/upload/wap/css/about_wap/swiper.min.css" />
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="index-wrapper" id="app" v-cloak>
+        <!-- 头部banner轮播 -->
+        <div class="index-swiper">
+            <div class="swiper-container banner-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="item in bannerList" :key="item.id">
+                        <a href="javascript:void(0)">
+                            <img :src="item.src" />
+                            <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/app/wap/twygapp/image/tuoyuan_line.png"  style="margin-top:-60px;"/>
+                  
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-pagination" v-show="bannerList.length>1"></div>
+                    
+            </div>
+        </div>
+        <!--分类-->
+        <div class="nine" style="background: rgb(244 244 244);">
+            <ul>
+                <a href="javascript:void(0)" @click="homePage('LISTTYPE','1773')">
+                    <li>
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/cms/202011/30/8ddcd746480e458120d1f342036b5c03.png" onerror="this.src='images/loading.png'" />
+                        <!-- <p>印刷</p> -->
+                    </li>
+                </a>
+                        <!--     <li>
+                    <a href="javascript:void(0)" @click="homePage('LISTTYPE','1844')">
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/app/wap/twygapp/image/smys.png" onerror="this.src='images/loading.png'" />
+                        <p>数码印刷</p>
+                    </a>
+                </li> -->
+                <a href="javascript:void(0)" @click="homePage('LISTTYPE','1820')">
+                    <li>
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/cms/202011/30/d703ff0106acdd370cd93bad34826e5e.png" onerror="this.src='images/loading.png'" />
+                        <!-- <p>广告物料</p> -->
+                    </li>
+                </a>
+                         <!--    <li>
+                    <a href="javascript:void(0)" @click="homePage('LISTTYPE','1850')">
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/app/wap/twygapp/image/dsbz.png" onerror="this.src='images/loading.png'" />
+                        <p>电商包装</p>
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:void(0)" @click="homePage('LISTTYPE','1864')">
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/app/wap/twygapp/image/gxdz.png" onerror="this.src='images/loading.png'" />
+                        <p>个性定制</p>
+                    </a>
+                </li> -->
+                <a href="javascript:void(0)" @click="homePage('LISTTYPE','1921')">
+                    <li>
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/cms/202011/30/da27d7f5448afc531ae220a0a20df34a.png" onerror="this.src='images/loading.png'" />
+                        <!-- <p>办公用品</p> -->
+                    </li>
+                </a>
+                <a href="javascript:void(0)" @click="homePage('LISTTYPE','1964')">
+                    <li>
+                    
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/cms/202011/30/d36becde53fbea4139a817b90af6f7db.png" onerror="this.src='images/loading.png'" />
+                        <!-- <p>设计服务</p> -->
+                    </li>
+                </a>
+                
+                     <!--        <li>
+                    <a href="javascript:void(0)" @click="homePage('LISTTYPE','2007')">
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/app/wap/twygapp/image/zzzj.png" onerror="this.src='images/loading.png'" />
+                        <p>纸张纸浆</p>
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:void(0)" @click="homePage('LISTTYPE','1964')">
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/app/wap/twygapp/image/hcdq.png" onerror="this.src='images/loading.png'" />
+                        <p>耗材大全</p>
+                    </a>
+                </li> -->
+                <a href="javascript:void(0)" @click="homePage('LISTTYPE','1864')">
+                    <li>
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/cms/202011/30/505d2102d685511bf2933194137c50cb.png" onerror="this.src='images/loading.png'" />
+                        <!-- <p>个性定制</p> -->
+                    </li>
+                </a>
+                <a href="javascript:void(0)" @click="homePage('LISTTYPE','2007')">
+                    <li>
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/cms/202011/30/9dc50b9a2a20fb841b0788746ce2ebf2.png" onerror="this.src='images/loading.png'" />
+                        <!-- <p>大宗原材料</p> -->
+                    
+                    </li>
+                </a>
+            </ul>
+        </div>
+    
+
+
+
+
+
+
+        <!-- 优惠券领取 -->
+        <!-- <div class="section section-coupon ">
+            <h2 class="title">优惠券领取</h2>
+            <div class="line"></div> -->
+            <!-- 优惠券Swiper -->
+          <!--  <div class="swiper-container swiper-coupon">
+                    <div class="swiper-wrapper"> -->
+                    <!-- 待领取 -->
+              <!--      <div class="swiper-slide" v-for="(item,index) in coupons":key="index">
+                        <a href="javascript:void(0)"  @click="homePage('COUPONS','2007')">
+                            <img src="https://oss.11ziyun.com/upload/wap/shanghubaoprogram/coupon_purple.png"
+                                alt="">
+                            <div class="swiper-content">
+                                <div class="top block">{{item.title}}</div>
+                                <div class="bottom">
+                                    <p>仅限{{item.describes}}</p>
+                                    <p>{{item.endTime}}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div> -->
+                  <!--   已结束 -->
+                    <!-- <div class="swiper-slide">
+                        <a href="javascript:void(0)">
+                            <img src="https://oss.11ziyun.com/upload/wap/shanghubaoprogram/coupon_finish.png"
+                                alt="">
+                            <div class="swiper-content">
+                                <div class="top block">满200减10</div>
+                                <div class="bottom">
+                                    <p>仅限紫云平台</p>
+                                    <p>有效期：2019-10-03 12:00</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div> -->
+                    <!-- 已领取 -->
+                    <!-- <div class="swiper-slide">
+                        <a href="javascript:void(0)">
+                            <img src="https://oss.11ziyun.com/upload/wap/shanghubaoprogram/coupon_gray.png"
+                                alt="">
+                            <div class="swiper-content">
+                                <div class="top block">满200减10</div>
+                                <div class="bottom">
+                                    <p>仅限紫云平台</p>
+                                    <p>有效期：2019-10-03 12:00</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div> 
+                </div>
+            
+        </div>-->
+        <!--快讯-->
+        <!-- <div class="helper">
+            <div class="helpContainer">
+                <img src="https://oss.11ziyun.com/upload/wap/main/helper.png" alt="" width="100%">
+                <div class="turnDiv" style="margin-bottom: 12px;">
+                                    <a class="text" style="color:#FFF" onclick="homePage('OUTSIDEURL',
+                                    'https://ziyunoss.oss-cn-hangzhou.aliyuncs.com/approm/download_2.html')">纸印商城上线啦</a>
+                                </div>
+            </div>
+        </div> -->
+
+
+        <!-- 我要砍价 -->
+        <div class="bargain" hidden>
+            <div class="more-buy more-buy2" @click="homePage('KANJIA', '')">
+                <img src="https://oss.11ziyun.com/upload/wap/shanghubaoprogram/pintuan/wykj.png" alt="">
+            </div>
+            <ul class="goods-list">
+                <li class="goods-item"  v-for="(item, index) in cutProducts" :key="index"  
+                @click="homePage('KANJIA', [item.goodsId,item.productId,item.userBargainId,item.bargainId,item.bargainState])"
+                 :spu-id="item.goodsId" :sku-id="item.productId" :bargainId="item.userBargainId?item.userBargainId:0" :bargain-state="item.bargainState">
+                    <div class="goods-img">
+                        <!-- 砍价成功显示 -->
+                        <!-- <div class="goods-success" v-if="item.bargainState == 2">
+                            <img :src="OSSUrl+'upload/wap/shanghubaoprogram/bargain/img-bargain-success.png'" alt="">
+                        </div> -->
+                        <img :src="OSSUrl+item.defaultImage" alt="">
+                    </div>
+                    <div class="goods-name">{{item.goodsName}} {{item.productIntro}}</div>
+                    <div class="goods-meta">
+                        已有<span>{{item.number}}</span>人参与
+                    </div>
+                    <div class="goods-info">
+                        <div class="left-info">
+                            剩余<span>{{item.store}}</span>件
+                        </div>
+                        <div class="right-info">
+                            ￥<p>{{item.originPrice}}</p>
+                        </div>
+                    </div>
+                    <div v-if="item.bargainState == 0" class="btn-handle get">
+                        点击{{item.lowestPrice}}元拿
+                    </div>
+                    <div v-else-if="item.bargainState == 1" class="btn-handle">
+                        继续砍价
+                    </div>
+                    <div v-else-if="item.bargainState == 2" class="btn-handle success">
+                        砍价成功
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 原材料 -->
+       
+            <!-- <div class="hide">
+                <div class="material-more">
+                    <a href="javascript:void(0)" @click="homePage('YUANCAILIAO', '')">
+                        <img src="./image/1.png" alt="">
+                    </a>
+                </div>
+                <ul class="material-list">
+                    <li class="item" v-for="item in materialList" :key="item.goodsId" :data-id="item.goodsList[0].goodsId"
+                        @click="homePage('GOODS',item.goodsList[0].goodsId)">
+                        <a href="javascript:void(0)">
+                            <img :src="baseImgUrl+item.url+'?x-oss-process=image/resize,m_fill,w_400,h_400'"
+                                :alt="item.goodsName">
+                            <p class="desc">{{item.categoryName}}</p>
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+       
+
+
+          <!-- 紫云秒杀 -->
+          <!-- <div class="section section-work">
+            <h2 class="title">紫云秒杀<span>每周二10:00-17:00</span></h2>
+            <div class="work-list work-list-last">
+                <div class="work-item" v-for="(item,index) in secKillProducts" :key="item.categoryId"
+                    :data-id="[item.categoryId]">
+                    <a href="javascript:void(0)" @click="homePage('GOODS',[item.spu])">
+                        <img :src="baseImgUrl+item.imageUrl+'?x-oss-process=image/resize,m_fill,w_400,h_400'"
+                            :alt="item.goodsName">
+                        <p class="desc">{{item.describes}}</p>
+                    </a>
+                </div>
+            </div>
+            </div> -->
+
+            <div class="bargin">
+		
+                <a @click="homePage('pintuan','')"><img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/app/wap/twygapp/image/pintuan.png" alt=""></a>
+                <a @click="homePage('kanjia','')"><img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/app/wap/twygapp/image/kanjia.png" alt=""></a>
+            </div>
+            <div class="section section-material" >
+                
+                <ul class="recommend-list"  style="margin-top:10px;"  >
+                    <li  @click="homePage('listtypethree', 1)">
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/app/wap/twygapp/image/tjsp.png" alt="">
+                    </li>
+                    <li  @click="homePage('listtypethree', 3)">
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/app/wap/twygapp/image/xlph.png" alt="">
+                    </li>
+                    <li  @click="homePage('listtypethree', 10)">
+                        <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/app/wap/twygapp/image/zxsj.png" alt="">
+                    </li>
+                </ul>
+            </div>   
+
+        <!-- 待加工 -->
+        <!-- <div class="section section-work" hidden>
+            <h2 class="title">实力优品<span>万千好货 无优购买</span></h2>
+            <div class="section-work-one">
+                <div class="work-more" :data-id="firstWorkId">
+                    <a href="javascript:void(0)" @click="homePage('DAIJIAGONG',firstWorkId)">
+                        <img src="./image/2.png" alt="待加工">
+                    </a>
+                </div>
+                <div class="work-list work-list-first">
+                    <div class="work-item" v-for="(item,index) in workList.slice(0,2)" :key="item.categoryId"
+                        :data-id="[item.categoryId]">
+                        <a href="javascript:void(0)" @click="homePage('DAIJIAGONG',[item.categoryId])">
+                            <img :src="baseImgUrl+item.url+'?x-oss-process=image/resize,m_fill,w_400,h_400'"
+                                :alt="item.goodsName">
+                            <p class="desc">{{item.categoryName}}</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="work-list work-list-last">
+                <div class="work-item" v-for="(item,index) in workList.slice(2)" :key="item.categoryId"
+                    :data-id="[item.categoryId]">
+                    <a href="javascript:void(0)" @click="homePage('DAIJIAGONG',[item.categoryId])">
+                        <img :src="baseImgUrl+item.url+'?x-oss-process=image/resize,m_fill,w_400,h_400'"
+                            :alt="item.goodsName">
+                        <p class="desc">{{item.categoryName}}</p>
+                    </a>
+                </div>
+            </div>
+        </div> -->
+        <div class="scene">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div v-for="(item,index) in senSenBuy" :key="index" @click="radio(index)" :class="sceneIndex==index?'swiper-slide active':'swiper-slide'">
+                      {{item.categoryName}}</div>
+                </div>
+            </div>
+        </div>
+         <div class="blocks">
+          <ul>
+            <li  v-for="(item,index) in sceneGoodsList" :key="index">
+                <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/upload/wap/shanghubaoprogram/zy_block.png" alt="" class="ziying">
+              <div class="good_img"   >
+                   
+                            <a href="javascript:void(0)" @click="homePage('GOODS',[item.goodsId])">
+                <img :src="baseImgUrl+item.imageUrl+'?x-oss-process=image/resize,m_pad,h_400,w_400'"></a>
+              </div>
+              <div class="good_con">
+                <h3>{{item.goodsName}}</h3>
+                <p class="p_text">{{item.productInfo}}</p>
+                <p><span>￥{{item.totalPricePop}}</span><em>热销中</em></p>
+              </div>
+            </li>
+           
+            <!-- <li>
+                <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/upload/wap/shanghubaoprogram/zy_block.png" alt="" class="ziying">
+              <div class="good_img">
+                <img src="https://oss.11ziyun.com/pop/test/pop/goods/goodsImages/1557566739876.jpg?x-oss-process=image/resize,m_pad,h_99,w_99"/>
+              </div>
+              <div class="good_con">
+                <h3>小西瓜小西瓜小西瓜小西瓜小西瓜</h3>
+                <p class="p_text">覆膜双面烫金</p>
+                <p><span>￥99.00</span><em>销量:100+</em></p>
+              </div>
+            </li>
+            <li>
+                <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/upload/wap/shanghubaoprogram/zy_block.png" alt="" class="ziying">
+              <div class="good_img">
+                <img src="https://oss.11ziyun.com/pop/test/pop/goods/goodsImages/1557566739876.jpg?x-oss-process=image/resize,m_pad,h_99,w_99"/>
+              </div>
+              <div class="good_con">
+                <h3>小西瓜小西瓜小西瓜小西瓜小西瓜</h3>
+                <p class="p_text">覆膜双面烫金</p>
+                <p><span>￥99.00</span><em>销量:100+</em></p>
+              </div>
+            </li>
+            <li>
+                <img src="https://ziyunoss.obs.cn-east-2.myhuaweicloud.com/upload/wap/shanghubaoprogram/zy_block.png" alt="" class="ziying">
+              <div class="good_img">
+                <img src="https://oss.11ziyun.com/pop/test/pop/goods/goodsImages/1557566739876.jpg?x-oss-process=image/resize,m_pad,h_99,w_99"/>
+              </div>
+              <div class="good_con">
+                <h3>小西瓜小西瓜小西瓜小西瓜小西瓜</h3>
+                <p class="p_text">覆膜双面烫金</p>
+                <p><span>￥99.00</span><em>销量:100+</em></p>
+              </div>
+            </li> -->
+          </ul>
+       </div>
+        <!-- 供应商 -->
+        <!-- <div class="section section-supplier" >
+            <h2 class="title">供应商<span>精选供应商 匹配最优质的服务</span></h2>
+            <div class="supplier-more">
+                <a href="javascript:void(0)" @click="homePage('STORELIST','')">
+                    <img src="./image/3.png" alt="供应商">
+                </a>
+            </div>
+            <ul class="supplier-list">
+                <li class="item" v-for="item in sellerList" :key="item.sellerId"
+                    @click="homePage('STORES',item.sellerId)" :data-id="item.sellerId">
+                    <a href="javascript:void(0)">
+                        <div class="top">
+                            <img v-if="item.logoUrl" :src="baseImgUrl+ item.logoUrl+'?x-oss-process=image/resize,m_fill,w_400,h_400'"
+                                alt="自营">
+                            <img v-else  src="./image/img-default.png" alt="">
+                            <span class="owner" v-if="item.self">自营</span>
+                        </div>
+                        <div class="bottom">
+                            <p class="name">
+                                {{item.doorheadName}}
+                            </p>
+                            <p class="address">
+                                {{item.addr}}
+                            </p>
+                            <div class="num">
+                                <p>已售：<span>{{item.orderNum}}</span>单</p>
+                                <span class="distance" v-if="item.distance">{{'0.'+item.distance.slice(0,2)}}KM</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div> -->
+    </div>
+    <script src="https://oss.11ziyun.com/upload/wap/css/about_wap/swiper.min.js"></script>
+    <script src="https://oss.11ziyun.com/upload/common/js/vue.min.js"></script>
+    <script src="https://oss.11ziyun.com/upload/common/js/axios.min.js"></script>
+</body>
+<script>
+  //var swiper = new Swiper('.scene .swiper-container');
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            isLoop: false,
+            autoplay: 3000,
+            baseImgUrl: 'https://oss.11ziyun.com/',
+            baseUrl: 'https://pop.11ziyun.com/',
+            // baseUrl: 'http://192.168.1.88:8088/',
+            // baseUrl: 'http://test.pop.11ziyun.com/',
+            //砍价商品数据
+            cutProducts: [],
+            //秒杀商品数据
+            secKillProducts:[],
+            //优惠券数据
+            coupons:[],
+            //场景购
+            senSenBuy:[],
+            materialList: [],
+            sellerList: [],
+            workList: [],
+            OSSUrl: 'https://oss.11ziyun.com/',
+            firstId: [],
+            secondId: [],
+            thirdId: [],
+            firstWorkId: '',
+            bannerList: [ 
+                {
+                    id: 1,
+                    src: "https://oss.11ziyun.com/cms/2019/05/banner.jpg"
+                }
+            ],
+            sceneGoodsList:[],
+            sceneIndex:0
+        },
+        computed: {
+            haveLocation: function () {
+                return location.href.includes('latitude')
+            }
+        },
+        methods: {
+            // 头部轮播
+            initBanner: function () {
+                if (this.bannerList.length == 1) {
+                    this.isLoop = false
+                    this.autoplay = false
+                }
+                new Swiper('.index-swiper .swiper-container', {
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    loop: this.isLoop,
+                    autoplay: this.autoplay,
+                    observeParents: true,
+                    observer: true,
+                    autoplayDisableOnInteraction: false
+                });
+            },
+            // 优惠券轮播
+            initCoupouSwiper: function () {
+                new Swiper('.swiper-coupon', {
+                    slidesPerView: '2.5',
+                    paginationClickable: true,
+                    spaceBetween: 8
+                });
+            },
+            //场景
+             sceneSwiper: function () {
+                new Swiper('.scene .swiper-container', {
+                    slidesPerView: 'auto',
+                });
+            },
+            radio:function(index){
+                this.sceneIndex=index;
+                this.sceneGoodsList= this.senSenBuy[index]['goodsChildren'];
+            },
+            //  获取原材料
+            getMaterial: function () {
+
+                var _this = this
+                var firstArr = [];
+                var num = 1
+                axios.get(this.baseUrl + 'popApi/goods/goods/getPurchaseGoodsCate').then(function (res) {
+                    if (res.data.msg === 'success') {
+                        res.data.data.forEach(function (item) {
+                            item.categoryList.forEach(function (secondGoods) {
+                                secondGoods.categoryList.forEach(function (goods) {
+                                    if (num >= 9) {
+                                        return
+                                    }
+                                    num++
+                                    firstArr.push(goods)
+                                })
+                            })
+                        });
+                        _this.materialList = firstArr
+                    }
+                }).catch(function (error) {
+                    console.log(error)
+                })
+            },
+            // 获取供应商
+            getSellerList: function () {
+                var _this = this
+                var obj = {}
+                var longitude = ''
+                if (this.haveLocation) {
+                    obj = this.formatUrl(location.href)
+                }
+                if (this.haveLocation && obj.longitude) {
+                    longitude = obj.longitude
+                } else if (this.haveLocation && obj.lontitu) {
+                    longitude = obj.lontitu
+                } else {
+                    longitude = ''
+                }
+                var params = {
+                    pageNo: 1,
+                    pageSize: 4,
+                    longitude: longitude,
+                    latitude: this.haveLocation ? obj.latitude : '',
+                    sellerType: "1",
+                    stageType: "2"
+                }
+                axios.post(this.baseUrl + 'popApi/seller/sellerList', params).then(function (res) {
+                    if (res.data.msg === 'success') {
+                        _this.sellerList = res.data.data.sellerVOList
+                    }
+                }).catch(function (error) {
+                    console.log(error)
+                })
+            },
+            // 获取待加工
+            getWork: function () {
+                var _this = this
+                var num = 1
+                var workArr = [], firstArr = [], secondArr = [], thirdArr = [];
+                axios.get(this.baseUrl + 'popApi/mall/category/getCategoryList').then(function (res) {
+                    if (res.data.msg === 'success') {
+                        res.data.data.forEach(function (item) {
+                            item.categoryList.forEach(function (secondGoods) {
+                                secondGoods.categoryList.forEach(function (goods) {
+                                    if (num >= 7) {
+                                        return
+                                    }
+                                    num++
+                                    // goods.firstcategoryId=item.categoryId
+                                    // goods.secondcategoryId = secondGoods.categoryId
+                                    workArr.push(goods)
+                                })
+                            })
+                        });
+                        _this.workList = workArr
+                        _this.firstWorkId = workArr[0].categoryId
+                    }
+                }).catch(function (error) {
+                    console.log(error)
+                })
+            },
+            //获取秒杀商品
+             getSecKillList: function () {
+
+                var  that = this,
+                appTpye = this.formatUrl(location.href).apptype,
+                token = this.formatUrl(location.href).token; 
+                axios.get(this.baseUrl + 'popApi/mall/Seckill/getSeckillGoodsList/2', {
+                    headers: {
+                        'apptype': appTpye,
+                        'token': token,
+                    }
+                }).then(function (res) {
+                    if (res.data.code == 1) {
+                        that.secKillProducts = res.data.data;
+                    }
+                    }).catch(function (error) {
+                        console.log(error) 
+                    })
+            },
+           
+             //获取优惠券
+             getCoupons: function () {
+
+               var  that = this,
+               appTpye = this.formatUrl(location.href).apptype,
+              token = this.formatUrl(location.href).token; 
+               axios.get(this.baseUrl + 'popApi/mall/coupon/loadReceiveCoupon', {
+                 headers: {
+                   'apptype': appTpye,
+                    'token': token,
+                 }
+              }).then(function (res) {
+               if (res.data.code == 1) {
+                 that.coupons = res.data.data;
+              }
+              }).catch(function (error) {
+                 console.log(error) 
+                })
+             },
+
+            //获取场景购商品
+            getSencBuy: function () {
+
+                var  that = this,
+                appTpye = this.formatUrl(location.href).apptype,
+                token = this.formatUrl(location.href).token; 
+                axios.get(this.baseUrl + 'popApi/mall/sceneCategory/getCategoryList', {
+                    headers: {
+                        'apptype': appTpye,
+                        'token': token,
+                    }
+                }).then(function (res) {
+                    if (res.data.code == 1) {
+                        that.senSenBuy = res.data.data;
+                        that.sceneGoodsList=res.data.data[0].goodsChildren;
+                    }
+                    }).catch(function (error) {
+                        console.log(error) 
+                    })
+            },
+
+
+
+            // 获取砍价商品
+            getBargainList: function () {
+                var  that = this,
+                appTpye = this.formatUrl(location.href).apptype,
+                token = this.formatUrl(location.href).token; 
+                axios.get(this.baseUrl + 'popApi/bargain/getBargainGoodsList', {
+                    headers: {
+                        'apptype': appTpye,
+                        'token': token
+                    }
+                }).then(function (res) {
+                    if (res.data.code == 1) {
+                        that.cutProducts = res.data.data;
+                    }
+                    }).catch(function (error) {
+                        console.log(error) 
+                    })
+            },
+            // 格式化url参数
+            formatUrl: function (url) {
+                if (!url) return
+                var arr = url.split('?')[1].split('&')
+                var obj = {}
+                for (var i = 0; i < arr.length; i++) {
+                    var str = arr[i].split('=')
+                    if (str[0]) {
+                        obj[str[0]] = str[1]
+                    }
+                }
+                return obj
+            },
+            // 建立桥接
+            setupWebViewJavascriptBridge: function (callback) {
+                if (window.WebViewJavascriptBridge) {
+                    return callback(WebViewJavascriptBridge);
+                } else {
+                    document.addEventListener('WebViewJavascriptBridgeReady', function () {
+                        callback(WebViewJavascriptBridge)
+                    }, false);
+                }
+                if (window.WVJBCallbacks) {
+                    return window.WVJBCallbacks.push(callback);
+                }
+                window.WVJBCallbacks = [callback]; // 创建一个 WVJBCallbacks 全局属性数组，并将 callback 插入到数组中。
+                var WVJBIframe = document.createElement('iframe');
+                WVJBIframe.style.display = 'none';
+                WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+                document.documentElement.appendChild(WVJBIframe);  // 把 iframe 添加到当前文导航上。
+                setTimeout(function () { document.documentElement.removeChild(WVJBIframe) }, 0)
+            },
+            // 跳转方法
+            homePage: function (type, val) {
+                this.setupWebViewJavascriptBridge(function (bridge) {
+                    bridge.callHandler('homePage', {
+                        'type': type,
+                        'val': val.toString()
+                    }, function (response) {
+                        // log('JS got response', response)
+                    })
+                })
+            }
+        },
+        created: function () {
+            this.getMaterial()
+            this.getSellerList()
+            this.getCoupons()
+            this.getWork()
+            this.getSencBuy()
+            this.getBargainList()
+            this.getSecKillList()
+        },
+        mounted: function () {
+            this.initBanner()
+            this.initCoupouSwiper()
+            this.sceneSwiper()
+        }
+    })
+</script>
+</html>
